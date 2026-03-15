@@ -1,5 +1,7 @@
 import Link from 'next/link'
 import dayjs from 'dayjs'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faPenToSquare, faTrash, faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons'
 import type { RewardListResponse } from '@/app/api/reward/reward-list/route'
 
 type RewardListProps = {
@@ -64,14 +66,14 @@ export default function RewardList({
                         className="flex items-center gap-1 rounded-lg border border-gray-300 px-3 py-1.5 text-xs font-medium text-gray-700 hover:bg-gray-50"
                         data-testid="edit-btn"
                       >
-                        ✏️ แก้ไข
+                        <FontAwesomeIcon icon={faPenToSquare} /> แก้ไข
                       </Link>
                       <button
                         onClick={() => onDeleteClick(reward.id, reward.info.title)}
                         className="rounded-lg p-1.5 text-gray-400 hover:bg-red-50 hover:text-red-600"
                         data-testid="delete-btn"
                       >
-                        🗑️
+                        <FontAwesomeIcon icon={faTrash} />
                       </button>
                     </div>
                   )}
@@ -103,7 +105,7 @@ export default function RewardList({
             disabled={currentPage === 1}
             className="rounded-lg border border-gray-300 px-3 py-1.5 text-sm disabled:opacity-40"
           >
-            ←
+            <FontAwesomeIcon icon={faChevronLeft} />
           </button>
           <span className="text-sm text-gray-600">
             {currentPage} / {totalPage || 1}
@@ -113,7 +115,7 @@ export default function RewardList({
             disabled={currentPage === totalPage || totalPage === 0}
             className="rounded-lg border border-gray-300 px-3 py-1.5 text-sm disabled:opacity-40"
           >
-            →
+            <FontAwesomeIcon icon={faChevronRight} />
           </button>
         </div>
       </div>

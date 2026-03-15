@@ -1,5 +1,7 @@
 'use client'
 import { useFormContext } from 'react-hook-form'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faTicket, faChevronLeft } from '@fortawesome/free-solid-svg-icons'
 import type { FormDataReward } from '../types/reward.types'
 import type { RewardCodeListResponse } from '@/app/api/reward/reward-code-lists/route'
 
@@ -49,7 +51,7 @@ export default function RewardCodeTabs({
     <div className="flex max-w-[992px] flex-col gap-6">
       <div className="rounded-xl border border-gray-200 bg-white shadow-sm">
         <div className="flex items-center gap-2 border-b border-gray-200 px-6 py-4">
-          <span className="text-lg">🎟️</span>
+          <FontAwesomeIcon icon={faTicket} className="text-gray-500" />
           <h2 className="text-base font-semibold text-gray-800">โค้ดรางวัล</h2>
         </div>
 
@@ -130,7 +132,7 @@ export default function RewardCodeTabs({
           data-testid="reward-info-btn"
           className="flex items-center gap-2 rounded-xl border border-gray-300 px-5 py-2.5 text-sm font-medium text-gray-700 hover:bg-gray-50 disabled:opacity-40"
         >
-          ← ข้อมูลรางวัล
+          <FontAwesomeIcon icon={faChevronLeft} className="text-xs" /> ข้อมูลรางวัล
         </button>
         <button
           type="submit"

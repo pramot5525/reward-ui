@@ -1,6 +1,8 @@
 'use client'
 import { useState } from 'react'
 import Link from 'next/link'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faPlus } from '@fortawesome/free-solid-svg-icons'
 import { mutate } from 'swr'
 import { useRewardList } from '@/features/reward-management/hooks/useRewardList'
 import { useMutateDeleteReward } from '@/features/reward-management/hooks/useMutateDeleteReward'
@@ -47,7 +49,7 @@ export default function RewardManagementListPage() {
           className="flex items-center gap-2 rounded-xl bg-blue-600 px-4 py-2.5 text-sm font-semibold text-white hover:bg-blue-700"
           data-testid="addnew-btn"
         >
-          + เพิ่มรางวัล
+          <FontAwesomeIcon icon={faPlus} /> เพิ่มรางวัล
         </Link>
       </div>
 

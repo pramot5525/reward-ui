@@ -2,6 +2,8 @@
 import { useAuthStateStore } from '@/core/store/authStateStore'
 import { useRouter } from 'next/navigation'
 import { useEffect, useState } from 'react'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faGift } from '@fortawesome/free-solid-svg-icons'
 
 export default function Home() {
   const { authState, onGotUser } = useAuthStateStore()
@@ -47,7 +49,7 @@ export default function Home() {
       {/* Left panel */}
       <div className="hidden w-1/2 flex-col items-center justify-center bg-blue-600 lg:flex">
         <div className="flex flex-col items-center gap-6 text-white">
-          <span className="text-8xl">🎁</span>
+          <FontAwesomeIcon icon={faGift} className="text-8xl text-white/80" />
           <h1 className="text-4xl font-bold tracking-tight">Reward Portal</h1>
           <p className="text-lg text-blue-100">ระบบจัดการรางวัลสำหรับผู้ดูแลระบบ</p>
         </div>
@@ -58,7 +60,7 @@ export default function Home() {
         <div className="w-full max-w-sm">
           {/* Mobile logo */}
           <div className="mb-8 flex flex-col items-center gap-2 lg:hidden">
-            <span className="text-5xl">🎁</span>
+            <FontAwesomeIcon icon={faGift} className="text-5xl text-blue-600" />
             <h1 className="text-2xl font-bold text-gray-900">Reward Portal</h1>
           </div>
 

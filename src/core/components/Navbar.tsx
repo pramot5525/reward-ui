@@ -1,6 +1,8 @@
 'use client'
 import { useAuthStateStore } from '@/core/store/authStateStore'
 import { useRouter } from 'next/navigation'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faGift, faRightFromBracket } from '@fortawesome/free-solid-svg-icons'
 
 export default function Navbar() {
   const { user, onUnAuthorized } = useAuthStateStore()
@@ -16,7 +18,7 @@ export default function Navbar() {
     <header className="shrink-0 border-b border-gray-200 bg-white shadow-sm">
       <div className="flex h-14 items-center justify-between px-8">
         <div className="flex items-center gap-2.5">
-          <span className="text-2xl">🎁</span>
+          <FontAwesomeIcon icon={faGift} className="text-xl text-gray-700" />
           <span className="text-base font-bold tracking-tight text-gray-900">Reward Portal</span>
         </div>
 
@@ -31,6 +33,7 @@ export default function Navbar() {
             onClick={handleSignOut}
             className="flex items-center gap-1.5 rounded-lg border border-gray-300 px-3 py-1.5 text-sm font-medium text-gray-600 transition-colors hover:border-red-300 hover:bg-red-50 hover:text-red-600"
           >
+            <FontAwesomeIcon icon={faRightFromBracket} />
             ออกจากระบบ
           </button>
         </div>

@@ -1,6 +1,8 @@
 'use client'
 import { ChangeEvent } from 'react'
 import { Controller, useFormContext } from 'react-hook-form'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faFileLines, faImage, faChevronRight } from '@fortawesome/free-solid-svg-icons'
 import type { FormDataReward } from '../types/reward.types'
 import { RewardConditionBy } from '../types/reward.types'
 import type { TierDetailResponse } from '@/app/api/loyalty/tier-lists/route'
@@ -75,7 +77,7 @@ export default function RewardInfoTabs({
     <div className="flex flex-col gap-6">
       <div className="rounded-xl border border-gray-200 bg-white shadow-sm">
         <div className="flex items-center gap-2 border-b border-gray-200 px-6 py-4">
-          <span className="text-lg">📄</span>
+          <FontAwesomeIcon icon={faFileLines} className="text-gray-500" />
           <h2 className="text-base font-semibold text-gray-800">ข้อมูลรางวัล</h2>
         </div>
 
@@ -320,7 +322,7 @@ export default function RewardInfoTabs({
       {/* Image Section */}
       <div className="rounded-xl border border-gray-200 bg-white shadow-sm">
         <div className="flex items-center gap-2 border-b border-gray-200 px-6 py-4">
-          <span className="text-lg">🖼️</span>
+          <FontAwesomeIcon icon={faImage} className="text-gray-500" />
           <h2 className="text-base font-semibold text-gray-800">รูปภาพรางวัล</h2>
         </div>
 
@@ -388,7 +390,7 @@ export default function RewardInfoTabs({
           data-testid="reward-code-btn"
           className="flex items-center gap-2 rounded-xl border border-blue-500 bg-blue-50 px-5 py-3 text-sm font-semibold text-blue-700 hover:bg-blue-100"
         >
-          โค้ดรางวัล →
+          โค้ดรางวัล <FontAwesomeIcon icon={faChevronRight} className="text-xs" />
         </button>
       </div>
     </div>
