@@ -1,6 +1,8 @@
 import { rewardServiceAPI } from '@/core/api/reward/api-client'
 import { NextRequest } from 'next/server'
 
+export const dynamic = 'force-dynamic'
+
 export type RewardListItemInfo = {
   title: string
   subtitle: string
@@ -36,6 +38,9 @@ export async function GET(request: NextRequest) {
   try {
     const { data } = await rewardServiceAPI.get<BffGetRewardListResponse>('/api/v1/reward/list', {
       params: request.nextUrl.searchParams,
+      headers: {
+        'Accept-Language': request.headers.get('Accept-Language') ?? 'th',
+      },
     })
 
     return Response.json(data, { status: 200 })
